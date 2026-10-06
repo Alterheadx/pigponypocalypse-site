@@ -1,0 +1,53 @@
+/* общий стиль сайта — шрифты и UI-кит из игры */
+:root{
+  --ground:#120a18;
+  --panel:#1f1429;
+  --line:#3d2a4c;
+  --ink:#ffffff;
+  --lav:#ebddff;          /* подписи меню */
+  --muted:#b9a8d0;
+  --pink:#e6157a;         /* наведение в меню */
+  --gold:#ffc76a;         /* золотой логотип */
+  --lava:#ff6a2b;
+  --display:"Bebas Neue",Impact,"Arial Narrow",sans-serif;   /* заголовки */
+  --label:"Oswald","Arial Narrow",system-ui,sans-serif;      /* кнопки */
+  --body:"Roboto",system-ui,-apple-system,"Segoe UI",sans-serif; /* текст */
+  --num:"Rajdhani","Arial Narrow",system-ui,sans-serif;      /* цифры */
+  color-scheme:dark;
+}
+body{background:var(--ground);color:var(--ink);font-family:var(--body)}
+
+/* кнопки из спрайтов btn_secondary / btn_primary (200 PPU → половина пикселей) */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font:500 17px/1 var(--label);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;
+  color:var(--lav);cursor:pointer;background:none;border-radius:0;
+  border:12px solid transparent;border-image:url(ui/btn_secondary_normal.png) 24 fill / 12px stretch;
+  padding:5px 16px}
+.btn:hover{color:#fff;border-image-source:url(ui/btn_secondary_hover.png)}
+.btn.primary{color:#fff;font-weight:600;background:none;border-image:url(ui/btn_primary_normal.png) 28 24 22 24 fill / 14px 12px 11px 12px stretch}
+.btn.primary:hover{border-image-source:url(ui/btn_primary_hover.png);color:#fff}
+a:focus-visible,button:focus-visible{outline:2px solid var(--pink);outline-offset:4px;border-radius:6px}
+
+/* панель list_panel */
+.kit-panel{border:8px solid transparent;border-image:url(ui/list_panel.png) 16 fill / 8px stretch}
+
+/* пункт меню как на стартовом экране: белый Bebas с тенью, наведение — розовый текст и плашка menu_hover */
+.menu{display:grid;gap:2px;justify-items:start}
+.menu a{font:400 clamp(34px,4vw,46px)/1 var(--display);letter-spacing:.03em;color:#fff;text-decoration:none;
+  text-shadow:0 3px 0 rgba(0,0,0,.55),0 0 18px rgba(0,0,0,.6);padding:8px 44px 6px 40px;margin-left:-40px;
+  border:0 solid transparent;border-width:0 20px;border-image:none}
+.menu a:hover,.menu a:focus-visible{color:var(--pink);outline:none;
+  border-image:url(ui/menu_hover.png) 0 40 fill / 0 20px stretch;text-shadow:0 2px 0 rgba(0,0,0,.4)}
+.menu a.primary{color:#fff}
+
+/* угольки */
+canvas.embers{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+
+[hidden]{display:none!important}
+
+/* шрифты игры — свои файлы (Google Fonts в Китае заблокирован) */
+@font-face{font-family:"Bebas Neue";src:url(fonts/BebasNeue.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Oswald";src:url(fonts/Oswald.woff2) format("woff2");font-weight:200 700;font-display:swap}
+@font-face{font-family:"Roboto";src:url(fonts/Roboto.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Rajdhani";src:url(fonts/Rajdhani-SemiBold.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Rajdhani";src:url(fonts/Rajdhani-Bold.woff2) format("woff2");font-weight:700;font-display:swap}

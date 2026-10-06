@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="PigPonyPocalypse 媒体资料：一款将于2026年10月13日登陆 Steam 的硬核 Boss Rush 游戏。概况、首领、截图、短片、标志与媒体联系方式。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PigPonyPocalypse — 媒体资料">
+<meta property="og:description" content="四个首领，没有一个杂兵。每一次倒下都是你的失误。2026年10月13日登陆 Steam。">
+<meta property="og:image" content="https://pigponypocalypse.com/presskit/img/capsule.jpg">
+<meta property="og:url" content="https://pigponypocalypse.com/zh/presskit/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png">
+<title>PigPonyPocalypse — 媒体资料</title>
+<style>
+/* layout: volcanic banner → fact sheet beside the pitch → bosses in play order → media → contact. one dark world, gold + lava on plum */
+:root{
+  --ground:#140c1a;      /* plum-black, the arena's shadow */
+  --panel:#1e1326;
+  --line:#3a2846;
+  --ink:#f3eaff;         /* lavender-white, the game's UI ink */
+  --muted:#b7a6c9;
+  --gold:#ffc76a;        /* logo gold */
+  --lava:#ff6a2b;        /* the King's cracks */
+  --pink:#e6157a;        /* menu hover pink */
+  --display:"Bebas Neue",Impact,"Arial Narrow",sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --label:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--ground);color:var(--ink);font:400 17px/1.6 var(--body);margin:0}
+a{color:var(--gold);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+img,video{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+h2{font:400 clamp(40px,6vw,64px)/.95 var(--display);letter-spacing:.01em;margin:0;text-wrap:balance}
+h3{font:400 clamp(30px,4vw,40px)/1 var(--display);letter-spacing:.015em;margin:0;text-wrap:balance}
+.eyebrow{font:600 14px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--lava);margin:0 0 12px}
+section{padding-block:clamp(56px,9vw,104px)}
+section+section{border-top:1px solid var(--line)}
+p{margin:0}
+
+/* hero */
+.hero{position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-art{position:absolute;inset:0;z-index:-2}
+.hero-art img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(180deg,rgba(20,12,26,.15) 0%,rgba(20,12,26,.05) 35%,rgba(20,12,26,.82) 78%,var(--ground) 100%)}
+.hero-inner{min-height:clamp(520px,62vw,720px);display:flex;flex-direction:column;justify-content:flex-end;gap:22px;padding-block:40px 44px}
+.logo{width:min(520px,82%);filter:drop-shadow(0 6px 24px rgba(0,0,0,.6))}
+.tagline{font:400 clamp(28px,4.4vw,48px)/1 var(--display);letter-spacing:.02em;max-width:22ch;text-wrap:balance}
+.tagline em{font-style:normal;color:var(--gold)}
+.release{display:flex;flex-wrap:wrap;gap:8px 18px;font:600 16px/1.2 var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.release b{color:var(--ink);font-weight:700}
+.release span{display:flex;align-items:center;gap:18px}
+.release span+span::before{content:"";width:5px;height:5px;background:var(--lava);transform:rotate(45deg)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 16px/1 var(--label);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+  padding:14px 20px;border-radius:6px;border:1px solid var(--line);color:var(--ink);background:rgba(30,19,38,.75);cursor:pointer}
+.btn:hover{border-color:var(--pink);color:#fff}
+.btn.primary{background:var(--gold);color:#2a1606;border-color:var(--gold)}
+.btn.primary:hover{background:#ffd78f;color:#2a1606}
+
+/* facts + pitch */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);gap:clamp(32px,6vw,80px);align-items:start}
+.facts{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:26px 24px}
+.facts h2{font-size:34px;margin-bottom:14px}
+.facts dl{margin:0;display:grid;gap:0}
+.facts .row{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;padding:11px 0;border-top:1px solid var(--line)}
+.facts dt{font:600 13px/1.5 var(--label);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:0;font-size:15.5px;line-height:1.5;overflow-wrap:anywhere}
+.pitch{display:grid;gap:22px;max-width:64ch}
+.pitch .lede{font-size:clamp(20px,2.2vw,23px);line-height:1.5;color:var(--ink)}
+.pitch p{color:var(--muted)}
+.pitch p strong{color:var(--ink);font-weight:600}
+
+/* features */
+.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 44px;margin-top:44px}
+.feature{display:grid;gap:10px;align-content:start;padding-top:18px;border-top:2px solid var(--line)}
+.feature:hover{border-top-color:var(--lava)}
+.feature h3{font-size:30px;color:var(--gold)}
+.feature p{color:var(--muted);font-size:16px}
+
+/* bosses */
+.bosses{display:grid;gap:clamp(56px,8vw,96px);margin-top:48px}
+.boss{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(24px,4vw,52px);align-items:center}
+.boss:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
+.boss:nth-child(even) .boss-media{order:2}
+.boss-media{display:grid;gap:10px}
+.boss-media .main{border-radius:8px;border:1px solid var(--line);cursor:zoom-in;aspect-ratio:16/9;object-fit:cover;width:100%}
+.boss-media .thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.boss-media .thumbs img{border-radius:6px;border:1px solid var(--line);cursor:zoom-in;aspect-ratio:16/9;object-fit:cover;width:100%;opacity:.85}
+.boss-media .thumbs img:hover{opacity:1;border-color:var(--gold)}
+.boss-text{display:grid;gap:16px}
+.order{font:700 14px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--lava)}
+.boss-text h3{font-size:clamp(40px,5vw,58px)}
+.boss-text p{color:var(--muted)}
+.mechs{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.mechs li{display:grid;grid-template-columns:14px minmax(0,1fr);gap:10px;font-size:15.5px;color:var(--ink)}
+.mechs li::before{content:"";width:7px;height:7px;margin-top:9px;background:var(--gold);transform:rotate(45deg)}
+.mechs b{font-weight:600;color:var(--gold)}
+.enrage{font:600 14px/1.3 var(--label);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.enrage b{color:var(--pink)}
+
+/* media */
+.trailer{margin-top:36px;border:1px dashed var(--line);border-radius:10px;padding:clamp(22px,4vw,36px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;background:var(--panel)}
+.trailer h3{font-size:32px}
+.trailer p{color:var(--muted);margin-top:6px}
+.clips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:28px}
+.clip{display:grid;gap:10px}
+.clip video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:8px;border:1px solid var(--line);background:#000}
+.clip span{font:600 14px/1.3 var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+.gallery button{all:unset;cursor:zoom-in;border-radius:6px;overflow:hidden;border:1px solid var(--line);display:block}
+.gallery button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.gallery img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .25s}
+.gallery button:hover img{transform:scale(1.03)}
+@media (prefers-reduced-motion:reduce){.gallery img{transition:none}}
+.note{font-size:15px;color:var(--muted);max-width:70ch}
+.dl{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:22px}
+.sub{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px 24px;margin-top:64px}
+.sub:first-of-type{margin-top:0}
+.sub h3{font-size:36px}
+
+.art{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;margin-top:28px}
+.art figure{margin:0;display:grid;gap:8px}
+.art figure>div{border-radius:8px;border:1px solid var(--line);overflow:hidden;background:var(--panel)}
+.art .logo-box{display:grid;place-items:center;padding:28px;height:100%;background:radial-gradient(circle at 50% 40%,#3b1d2e,#160d1c 70%)}
+.art figcaption{font:600 14px/1.3 var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(32px,6vw,80px);align-items:start}
+.contact .pitch p{color:var(--muted)}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.mail code{font:600 20px/1.2 var(--label);letter-spacing:.04em;color:var(--ink);user-select:all;overflow-wrap:anywhere;min-width:0}
+.links{display:grid;gap:12px;margin-top:14px}
+.links a{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);font:600 18px/1.2 var(--label);letter-spacing:.06em;text-transform:uppercase}
+.links a:hover{color:var(--gold)}
+.links a span{color:var(--muted);font-weight:500;text-transform:none;letter-spacing:.02em;overflow-wrap:anywhere;text-align:right}
+footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:14px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,6,14,.94);display:grid;grid-template-rows:1fr auto;padding:clamp(12px,3vw,32px);gap:12px}
+.lb img{max-height:100%;max-width:100%;margin:auto;object-fit:contain;border-radius:6px;min-height:0}
+.lb-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;color:var(--muted);font:600 15px/1.3 var(--label);letter-spacing:.06em}
+.lb-bar .ctrls{display:flex;gap:8px}
+
+@media (max-width:900px){
+  .split,.contact,.art{grid-template-columns:minmax(0,1fr)}
+  .features{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .boss,.boss:nth-child(even){grid-template-columns:minmax(0,1fr)}
+  .boss:nth-child(even) .boss-media{order:0}
+  .clips{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .features,.gallery{grid-template-columns:minmax(0,1fr)}
+  .trailer{grid-template-columns:minmax(0,1fr)}
+  .facts .row{grid-template-columns:minmax(0,1fr);gap:2px}
+}
+</style>
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+.trailer-box{margin-top:32px}
+.trailer-box video{width:100%;aspect-ratio:16/9;background:#000;border:8px solid transparent;border-image:url(/assets/ui/list_panel.png) 16 fill / 8px stretch}
+.facts,.mail{border:8px solid transparent;border-radius:0;border-image:url(/assets/ui/list_panel.png) 16 fill / 8px stretch;background:none}
+.facts .row{border-top-color:var(--line)}
+.logo{content:url(/assets/logo_gold.png)}
+.release b,.enrage b{font-family:var(--num);font-weight:700;letter-spacing:.04em}
+.order,.eyebrow{color:var(--pink)}
+.mechs li::before{background:var(--pink)}
+.feature:hover{border-top-color:var(--pink)}
+</style>
+
+<link rel="alternate" hreflang="en" href="https://pigponypocalypse.com/presskit/">
+<link rel="alternate" hreflang="zh-Hans" href="https://pigponypocalypse.com/zh/presskit/">
+<link rel="alternate" hreflang="ja" href="https://pigponypocalypse.com/ja/presskit/">
+<link rel="alternate" hreflang="ko" href="https://pigponypocalypse.com/ko/presskit/">
+<link rel="alternate" hreflang="ru" href="https://pigponypocalypse.com/ru/presskit/">
+<link rel="alternate" hreflang="x-default" href="https://pigponypocalypse.com/presskit/">
+<style>
+.langs{position:absolute;top:calc(env(safe-area-inset-top,0px) + 16px);right:clamp(16px,3vw,32px);z-index:5;display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.langs a{font:500 14px/1 var(--label);letter-spacing:.06em;color:var(--lav);text-decoration:none;padding:7px 9px;border-radius:4px;background:rgba(18,10,24,.55)}
+.langs a:hover{color:#fff;background:rgba(230,21,122,.35)}
+.langs a[aria-current]{color:#fff;background:var(--pink)}
+html[lang="ru"] .tag,html[lang="ru"] .tagline{max-width:none}
+html[lang="ru"] .tag b,html[lang="ru"] .tagline em{display:block}
+html{--display:"Bebas Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;--label:"Oswald","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;--body:"Roboto","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif}
+h2,h3,.tag,.tagline,.menu a,.final h2{font-weight:900;letter-spacing:.01em;font-synthesis:none;line-height:1.2}
+.menu a{font-size:clamp(28px,3.2vw,38px)}
+.tag,.tagline{max-width:none}
+.tag b,.tagline em{display:block}
+html[lang="ko"] body{word-break:keep-all}
+html[lang="ja"] body{line-break:strict}
+</style>
+</head>
+<body>
+<header class="hero">
+  <nav class="langs" aria-label="Language"><a href="/presskit/" hreflang="en" lang="en" data-lang="en">EN</a><a href="/zh/presskit/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh" aria-current="page">中文</a><a href="/ja/presskit/" hreflang="ja" lang="ja" data-lang="ja">日本語</a><a href="/ko/presskit/" hreflang="ko" lang="ko" data-lang="ko">한국어</a><a href="/ru/presskit/" hreflang="ru" lang="ru" data-lang="ru">RU</a></nav>
+  <div class="hero-art"><img src="/assets/keyart.jpg" alt="主视觉：三位小马英雄站在熔岩崖边，直面猪王、奥术腐化小猪、野猪哨兵以及双子野猪斯温和斯旺"></div>
+  <div class="wrap hero-inner">
+    <img class="logo" src="/presskit/img/logo.png" alt="PigPonyPocalypse">
+    <p class="tagline">四个首领，没有一个杂兵。 <em>每一次倒下都是你的失误。</em></p>
+    <div class="release"><span><b>2026年10月13日发售</b></span><span>Steam</span><span>Windows &amp; macOS</span></div>
+    <div class="cta">
+      <a class="btn primary" href="https://store.steampowered.com/app/4385110/PigPonyPocalypse/" target="_blank" rel="noopener">Steam 商店页</a>
+      <a class="btn" href="#media">截图与短片</a>
+      <a class="btn" href="/presskit/PigPonyPocalypse_PressKit.zip" download>下载 ZIP</a>
+      <a class="btn" href="#contact">媒体联系</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="about">
+  <div class="wrap split">
+    <aside class="facts" aria-labelledby="facts-h">
+      <h2 id="facts-h">游戏概况</h2>
+      <dl>
+        <div class="row"><dt>名称</dt><dd>PigPonyPocalypse</dd></div>
+        <div class="row"><dt>开发者</dt><dd>Alterhead（独立开发者，自行发行）</dd></div>
+        <div class="row"><dt>发售日</dt><dd>2026年10月13日</dd></div>
+        <div class="row"><dt>平台</dt><dd>Windows、macOS（Steam）</dd></div>
+        <div class="row"><dt>类型</dt><dd>Boss Rush、弹幕射击、双摇杆射击</dd></div>
+        <div class="row"><dt>内容</dt><dd>4 个首领 × 2 种难度，9 个天赋，18 个 Steam 成就，8 个全球秒伤排行榜</dd></div>
+        <div class="row"><dt>语言</dt><dd>简体中文、英语、日语、韩语、俄语</dd></div>
+        <div class="row"><dt>操作</dt><dd>键盘和鼠标；支持 Xbox 与 PlayStation 手柄</dd></div>
+        <div class="row"><dt>音乐</dt><dd>原创金属原声</dd></div>
+        <div class="row"><dt>媒体</dt><dd>alterhead.games@gmail.com</dd></div>
+      </dl>
+    </aside>
+    <div class="pitch">
+      <p class="eyebrow">关于游戏</p>
+      <h2>容不得半点失误的 Boss Rush</h2>
+      <p class="lede">PigPonyPocalypse 只有四场精心打造的首领战，别无其他。不用练级，不用刷刷刷，没有杂兵。只有你、首领的套路和全球秒伤排行榜。</p>
+      <p>每个首领都有自己的规则：有的攻击只有躲到掩体后面才能活下来，读条必须打断，贪输出时诅咒会越叠越多，脚下的地砖会按顺序爆炸——这个顺序你得记住。</p>
+      <p><strong>宽容模式</strong>用来摸清战斗。<strong>终极挑战</strong>才是真正的游戏：每个首领都有全新的阶段、全新的致命机制和截然不同的节奏。</p>
+      <p>通关只是一半。你在每个首领、每种难度下的最高秒伤都会登上 Steam 全球排行榜，所以击败首领之后战斗还在继续：从九个天赋中做选择，找到更好的起手，打出比所有人都高的伤害。</p>
+      <p>你不是一个人在战斗，但队友也不会让事情变简单。坦克脸盾梦想着被人打脸，还会给每个首领的攻击打分。治疗者肖蒂坚决不给他加血。同时指挥他们俩——当局面彻底失控时，就用时停。</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="features">
+      <div class="feature"><h3>每一次倒下都是你的失误</h3><p>每个机制都有解法。没有随机秒杀，也没有靠刷属性就能跳过的数值检测。</p></div>
+      <div class="feature"><h3>终极挑战</h3><p>高难度是另一场战斗：每个首领都有额外阶段、新机制和更紧的时机。</p></div>
+      <div class="feature"><h3>秒伤冠绝全球</h3><p>八个 Steam 秒伤排行榜，每个首领、每种难度各一个。</p></div>
+      <div class="feature"><h3>九个天赋</h3><p>三层天赋会改变你的玩法。</p></div>
+      <div class="feature"><h3>有主见的队伍</h3><p>指挥一名受虐狂坦克和一名不肯给他加血的治疗者。用时停来规划下一步。</p></div>
+      <div class="feature"><h3>金属原声</h3><p>为每一场战斗创作的原创金属乐，每个首领战前还有漫画过场。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="bosses">
+  <div class="wrap">
+    <p class="eyebrow">首领（按出场顺序）</p>
+    <h2>四场战斗，各有各的规则</h2>
+    <div class="bosses">
+
+      <article class="boss">
+        <div class="boss-media">
+          <img class="main" data-full src="/presskit/shots/screenshot_02_darkness_red_eyes.jpg" alt="奥术腐化小猪向玩家发射螺旋奥术法球" loading="lazy">
+          <div class="thumbs">
+            <img data-full src="/presskit/shots/screenshot_13_eight_boars_in_the_dark.jpg" alt="竞技场陷入黑暗，追击野猪正在猎杀玩家" loading="lazy">
+            <img data-full src="/presskit/shots/screenshot_20_dps_breakdown.jpg" alt="胜利画面，按技能显示秒伤构成" loading="lazy">
+          </div>
+        </div>
+        <div class="boss-text">
+          <span class="order">首领 1 / 4</span>
+          <h3>奥术腐化小猪</h3>
+          <p>看起来人畜无害。它会腐化你脚下的地面，召唤法塔和野猪；在“终极挑战”中还会多出以奥术湮灭为核心的第三阶段。</p>
+          <ul class="mechs">
+            <li><span><b>黑暗</b>——灯光熄灭，追击野猪循着你的踪迹而来。</span></li>
+            <li><span><b>引爆</b>——必须有人站进圈里，否则一切都会被炸飞。</span></li>
+            <li><span><b>奥术湮灭</b>——整个竞技场都在燃烧，只有法塔能提供掩护。</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="boss">
+        <div class="boss-media">
+          <img class="main" data-full src="/presskit/shots/screenshot_10_sun_circle.jpg" alt="斯温和斯旺在神殿竞技场联手作战" loading="lazy">
+          <div class="thumbs">
+            <img data-full src="/presskit/shots/screenshot_18_mystery_spirit.jpg" alt="在火墙前方奔跑穿过水晶桥" loading="lazy">
+          </div>
+        </div>
+        <div class="boss-text">
+          <span class="order">首领 2 / 4</span>
+          <h3>斯温和斯旺</h3>
+          <p>一对野猪兄弟：一个凶狠，一个有点呆。先在崩塌的桥上跑赢火墙，再到竞技场面对两兄弟。</p>
+          <ul class="mechs">
+            <li><span><b>火墙</b>——桥在崩塌，火焰从不停歇。</span></li>
+            <li><span><b>飞猪</b>——在你躲避火焰时发射追踪法球。</span></li>
+            <li><span><b>法球迷宫</b>——斯温用致命火球组成的迷宫填满竞技场。</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="boss">
+        <div class="boss-media">
+          <img class="main" data-full src="/presskit/shots/screenshot_06_sentinel_lightning.jpg" alt="野猪哨兵向神殿地面发射激光" loading="lazy">
+          <div class="thumbs">
+            <img data-full src="/presskit/shots/screenshot_14_lightning_storm.jpg" alt="密集的雷击覆盖哨兵的竞技场" loading="lazy">
+          </div>
+        </div>
+        <div class="boss-text">
+          <span class="order">首领 3 / 4</span>
+          <h3>野猪哨兵</h3>
+          <p>竞技场被分成三块，哨兵在每一块的打法都不同。</p>
+          <ul class="mechs">
+            <li><span><b>左侧</b>——技能充能更快，但你每秒都会受到伤害。</span></li>
+            <li><span><b>右侧</b>——你的伤害持续提升，但你同样每秒都会受到伤害。</span></li>
+            <li><span><b>中央</b>——哨兵消失，并给你出一道记忆解谜。</span></li>
+          </ul>
+          <p class="enrage">狂暴：<b>4 分钟</b></p>
+        </div>
+      </article>
+
+      <article class="boss">
+        <div class="boss-media">
+          <img class="main" data-full src="/presskit/shots/screenshot_17_royal_pyre_spears.jpg" alt="猪王引导皇家火堆，火焰淹没大厅" loading="lazy">
+          <div class="thumbs">
+            <img data-full src="/presskit/shots/screenshot_03_fire_cross.jpg" alt="烈焰十字的火线贯穿国王大厅" loading="lazy">
+            <img data-full src="/presskit/shots/screenshot_15_fire_walls.jpg" alt="火墙把竞技场分割成地砖" loading="lazy">
+            <img data-full src="/presskit/shots/screenshot_16_general_sword_star.jpg" alt="野猪将军的剑击火线在大厅中放射开来" loading="lazy">
+          </div>
+        </div>
+        <div class="boss-text">
+          <span class="order">首领 4 / 4 · 最终战</span>
+          <h3>猪王</h3>
+          <p>四个阶段，每损失四分之一生命进入下一阶段。被你击败并净化的首领会回来与你并肩作战。</p>
+          <ul class="mechs">
+            <li><span><b>烈焰十字</b>——摆好长矛的位置，才能继续前进。</span></li>
+            <li><span><b>野猪将军</b>——猪王的忠实仆从，有自己的攻击和自爆小猪。</span></li>
+            <li><span><b>烈焰记忆</b>——脚下的地砖按顺序爆炸，这个顺序你得记住。</span></li>
+            <li><span><b>皇家火堆</b>——猪王变得无敌，慢慢烧遍整个平台。你能想出应对的办法吗？</span></li>
+          </ul>
+          <p class="enrage">狂暴：<b>7.5 分钟</b></p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="media">
+  <div class="wrap">
+    <p class="eyebrow">媒体素材</p>
+    <h2>预告片、短片、截图</h2>
+
+    <div class="trailer-box">
+      <video src="/media/pigponypocalypse_trailer_1080p_v2.mp4" poster="/media/trailer_poster.jpg" controls preload="none" playsinline data-manual aria-label="PigPonyPocalypse trailer"></video>
+      <div class="dl"><a class="btn primary" href="https://youtu.be/Nrr_NKPHLzY" target="_blank" rel="noopener">在 YouTube 上观看</a><a class="btn" href="/media/pigponypocalypse_trailer_1080p_v2.mp4" download>下载预告片（MP4，1080p，41 MB）</a><p class="note">1:23 · 嵌入请使用 YouTube： https://youtu.be/Nrr_NKPHLzY</p></div>
+    </div>
+
+    <div class="sub"><h3>短片</h3></div>
+    <div class="clips">
+      <div class="clip"><video src="/presskit/clips/v3_1_four_spears_one_cross.mp4" poster="/presskit/clips/v3_1_four_spears_one_cross.jpg" muted loop playsinline autoplay preload="metadata" aria-label="四根长矛，一个十字：猪王的烈焰十字"></video><span>Four spears, one cross</span></div>
+      <div class="clip"><video src="/presskit/clips/v3_2_lights_out.mp4" poster="/presskit/clips/v3_2_lights_out.jpg" muted loop playsinline autoplay preload="metadata" aria-label="灯一灭，野猪就来了"></video><span>Lights out</span></div>
+      <div class="clip"><video src="/presskit/clips/v3_3_outrun_the_fire.mp4" poster="/presskit/clips/v3_3_outrun_the_fire.jpg" muted loop playsinline autoplay preload="metadata" aria-label="在两兄弟的桥上跑赢火墙"></video><span>Outrun the fire</span></div>
+      <div class="clip"><video src="/presskit/clips/v3_4_get_under_the_dome.mp4" poster="/presskit/clips/v3_4_get_under_the_dome.jpg" muted loop playsinline autoplay preload="metadata" aria-label="在国王之怒前躲进护罩"></video><span>Get under the dome</span></div>
+    </div>
+
+    <div class="sub"><h3>截图</h3><span class="enrage">11 张 · 点击放大</span></div>
+    <div class="gallery" id="gallery"></div>
+    <div class="dl"><a class="btn primary" href="/presskit/PigPonyPocalypse_PressKit.zip" download>下载媒体资料（ZIP，13 MB）</a><p class="note">11 张 4K 截图、透明背景标志、主视觉。所有截图均为实机画面。</p></div>
+
+    <div class="sub"><h3>标志与主视觉</h3></div>
+    <div class="art">
+      <figure><div><img data-full src="/presskit/img/capsule.jpg" alt="带 PigPonyPocalypse 标志的主视觉" loading="lazy" style="cursor:zoom-in"></div><figcaption>带标志的主视觉</figcaption></figure>
+      <figure><div class="logo-box"><img data-full src="/presskit/img/logo.png" alt="PigPonyPocalypse 标志" loading="lazy" style="cursor:zoom-in;max-width:88%"></div><figcaption>标志，透明 PNG</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <div class="pitch">
+      <p class="eyebrow">开发者</p>
+      <h2>开发者：Alterhead</h2>
+      <p>PigPonyPocalypse 由一个人设计并制作。这是一款给追求真正公平挑战的玩家的 Boss Rush：变强是唯一的出路，而在秒伤排行榜上，你可以和其他玩家比拼操作和战术创意。</p>
+      <p>需要激活码？请写信到本页的媒体邮箱。</p>
+    </div>
+    <div>
+      <p class="eyebrow">媒体联系</p>
+      <div class="mail">
+        <code id="mail">alterhead.games@gmail.com</code>
+        <button class="btn" id="copy" type="button">复制</button>
+      </div>
+      <div class="links">
+        <a href="https://store.steampowered.com/app/4385110/PigPonyPocalypse/" target="_blank" rel="noopener">Steam <span>store.steampowered.com/app/4385110</span></a>
+        <a href="https://discord.gg/fwwNwaWAKT" target="_blank" rel="noopener">Discord <span>discord.gg/fwwNwaWAKT</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><a href="/zh/">pigponypocalypse.com</a> · PigPonyPocalypse © 2026 Alterhead. 截图和美术素材可用于游戏相关报道。</div></footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="图片查看">
+  <img id="lb-img" alt="">
+  <div class="lb-bar">
+    <span id="lb-cap"></span>
+    <div class="ctrls">
+      <button class="btn" id="lb-prev" type="button" aria-label="上一张">←</button>
+      <button class="btn" id="lb-next" type="button" aria-label="下一张">→</button>
+      <button class="btn" id="lb-close" type="button">关闭</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var shots=[
+    ["screenshot_02_darkness_red_eyes","奥术腐化小猪——奥术螺旋"],
+    ["screenshot_13_eight_boars_in_the_dark","奥术腐化小猪——黑暗与追击野猪"],
+    ["screenshot_10_sun_circle","斯温和斯旺——两兄弟的竞技场"],
+    ["screenshot_18_mystery_spirit","斯温和斯旺——桥与火墙"],
+    ["screenshot_06_sentinel_lightning","野猪哨兵——激光"],
+    ["screenshot_14_lightning_storm","野猪哨兵——雷击"],
+    ["screenshot_03_fire_cross","猪王——烈焰十字"],
+    ["screenshot_15_fire_walls","猪王——火墙"],
+    ["screenshot_16_general_sword_star","猪王——野猪将军"],
+    ["screenshot_17_royal_pyre_spears","猪王——皇家火堆"],
+    ["screenshot_20_dps_breakdown","胜利画面——秒伤构成"]
+  ];
+  var g=document.getElementById("gallery");
+  shots.forEach(function(s){
+    var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","放大："+s[1]);
+    var i=document.createElement("img");i.src="/presskit/shots/"+s[0]+".jpg";i.alt=s[1];i.loading="lazy";i.setAttribute("data-full","");
+    b.appendChild(i);g.appendChild(b);
+  });
+
+  var lb=document.getElementById("lb"),li=document.getElementById("lb-img"),cap=document.getElementById("lb-cap"),list=[],idx=0,last=null;
+  function show(n){idx=(n+list.length)%list.length;li.src=list[idx].src;li.alt=list[idx].alt;cap.textContent=list[idx].alt;}
+  function open(img){list=[].slice.call(document.querySelectorAll("img[data-full]"));last=document.activeElement;show(list.indexOf(img));lb.hidden=false;document.getElementById("lb-close").focus();}
+  function close(){lb.hidden=true;li.removeAttribute("src");if(last&&last.focus)last.focus();}
+  document.addEventListener("click",function(e){
+    var t=e.target;
+    if(t.closest&&t.closest(".gallery button")){open(t.closest("button").querySelector("img"));return;}
+    if(t.matches&&t.matches("img[data-full]")&&!lb.contains(t)){open(t);}
+  });
+  document.getElementById("lb-close").onclick=close;
+  document.getElementById("lb-prev").onclick=function(){show(idx-1)};
+  document.getElementById("lb-next").onclick=function(){show(idx+1)};
+  lb.addEventListener("click",function(e){if(e.target===lb)close();});
+  document.addEventListener("keydown",function(e){
+    if(lb.hidden)return;
+    if(e.key==="Escape")close();else if(e.key==="ArrowLeft")show(idx-1);else if(e.key==="ArrowRight")show(idx+1);
+  });
+
+
+  var cp=document.getElementById("copy");
+  cp.onclick=function(){
+    var txt=document.getElementById("mail").textContent;
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("mail"));var s=getSelection();s.removeAllRanges();s.addRange(r);cp.textContent="已选中";}
+    try{navigator.clipboard.writeText(txt).then(function(){cp.textContent="已复制";},sel);}catch(err){sel();}
+  };
+})();
+</script>
+
+<script src="/assets/site.js"></script>
+<script>
+document.querySelectorAll(".langs a").forEach(function(a){a.addEventListener("click",function(){try{localStorage.setItem("ppp_lang",a.dataset.lang)}catch(e){}})});
+</script>
+</body>
+</html>

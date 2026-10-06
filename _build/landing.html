@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{l_title}}</title>
+<meta name="description" content="{{l_meta}}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PigPonyPocalypse">
+<meta property="og:description" content="{{og_desc}}">
+<meta property="og:image" content="https://pigponypocalypse.com/presskit/img/capsule.jpg">
+<meta property="og:url" content="https://pigponypocalypse.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font-size:17px;line-height:1.6}
+img,video{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:clamp(16px,4vw,48px)}
+
+/* стартовый экран: арт, затемнение слева, логотип и меню колонкой */
+.stage{position:relative;isolation:isolate;overflow:hidden;min-height:min(100vh,860px);display:flex;align-items:center}
+.stage>.art{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:62% 40%}
+.stage::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(90deg,rgba(18,10,24,.92) 0%,rgba(18,10,24,.72) 30%,rgba(18,10,24,.15) 62%,rgba(18,10,24,0) 80%),
+  linear-gradient(180deg,rgba(18,10,24,0) 70%,var(--ground) 100%)}
+.stage-inner{position:relative;z-index:1;width:100%;display:grid;gap:28px;padding-block:56px 72px}
+.logo{width:min(480px,78vw);filter:drop-shadow(0 8px 26px rgba(0,0,0,.7))}
+.tag{margin:0;font:400 clamp(24px,2.6vw,32px)/1.05 var(--display);letter-spacing:.03em;color:var(--lav);max-width:24ch;text-shadow:0 2px 0 rgba(0,0,0,.5)}
+.tag b{font-weight:400;color:var(--gold)}
+.date{display:inline-flex;align-items:baseline;gap:12px;font:500 15px/1 var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.date b{font:700 22px/1 var(--num);letter-spacing:.06em;color:#fff}
+
+/* цифры как у ДПС-метра */
+.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}
+.stat{display:grid;justify-items:center;gap:2px;padding:18px 8px;text-align:center}
+.stat b{font:700 clamp(40px,5vw,60px)/1 var(--num);color:#fff}
+.stat span{font:500 14px/1.2 var(--label);letter-spacing:.12em;text-transform:uppercase;color:var(--lav)}
+
+section{padding-block:clamp(56px,8vw,96px)}
+.blur-bg{position:relative;isolation:isolate}
+.blur-bg::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--ground),rgba(18,10,24,.78) 20%,rgba(18,10,24,.78) 80%,var(--ground)),url(/assets/keyart_blur.jpg) center/cover}
+h2{margin:0 0 8px;font:400 clamp(40px,5.5vw,64px)/1 var(--display);letter-spacing:.02em;text-wrap:balance}
+.lead{margin:0;color:var(--muted);max-width:60ch}
+
+.bosses{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:36px}
+.boss{display:grid;gap:12px;padding:10px}
+.boss img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px}
+.boss h3{margin:0;font:400 28px/1 var(--display);letter-spacing:.03em}
+.boss p{margin:0;font-size:15px;color:var(--muted)}
+.boss .n{font:500 13px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--pink)}
+
+.clips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:32px}
+.trailer{width:100%;aspect-ratio:16/9;margin-top:24px;background:#000;border:8px solid transparent;border-image:url(/assets/ui/list_panel.png) 16 fill / 8px stretch}
+.clips video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:6px;background:#000}
+
+.final{text-align:center;display:grid;justify-items:center;gap:22px}
+.final .btn{font-size:20px;padding:8px 28px}
+footer{border-top:1px solid var(--line);padding-block:26px;color:var(--muted);font:400 15px/1.5 var(--body)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+footer a{color:var(--lav);text-decoration:none;font:500 15px/1.5 var(--label);letter-spacing:.08em;text-transform:uppercase}
+footer a:hover{color:var(--pink)}
+
+@media (max-width:900px){
+  .bosses{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .clips{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .stage::before{background:linear-gradient(180deg,rgba(18,10,24,.35) 0%,rgba(18,10,24,.6) 45%,rgba(18,10,24,.92) 75%,var(--ground) 100%)}
+  .stage{align-items:flex-end}
+}
+@media (max-width:520px){
+  .bosses{grid-template-columns:minmax(0,1fr)}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+</style>
+</head>
+<body>
+
+<header class="stage">
+  <img class="art" src="/assets/keyart.jpg" alt="{{l_hero_alt}}">
+  <canvas class="embers" id="embers" aria-hidden="true"></canvas>
+  <div class="wrap stage-inner">
+    <img class="logo" src="/assets/logo_gold.png" alt="PigPonyPocalypse">
+    <p class="tag">{{tag_a}} <b>{{tag_b}}</b></p>
+    <nav class="menu" aria-label="Main">
+      <a href="https://store.steampowered.com/app/4385110/PigPonyPocalypse/">{{wishlist}}</a>
+      <a href="#trailer">{{l_menu_trailer}}</a>
+      <a href="#bosses">{{l_menu_bosses}}</a>
+      <a href="{{base}}/presskit/">{{presskit}}</a>
+      <a href="https://discord.gg/fwwNwaWAKT">Discord</a>
+    </nav>
+    <div class="date">{{l_date}}</div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="stats kit-panel" role="list">
+      <div class="stat" role="listitem"><b>4</b><span>{{l_st_bosses}}</span></div>
+      <div class="stat" role="listitem"><b>2</b><span>{{l_st_diff}}</span></div>
+      <div class="stat" role="listitem"><b>9</b><span>{{l_st_talents}}</span></div>
+      <div class="stat" role="listitem"><b>8</b><span>{{l_st_lb}}</span></div>
+      <div class="stat" role="listitem"><b>0</b><span>{{l_st_grind}}</span></div>
+    </div>
+  </div>
+
+  <section id="trailer">
+    <div class="wrap">
+      <h2>{{l_trailer_h}}</h2>
+      <video class="trailer" src="/media/pigponypocalypse_trailer_1080p_v2.mp4" poster="/media/trailer_poster.jpg" controls preload="none" playsinline data-manual aria-label="PigPonyPocalypse trailer"></video>
+      <p style="margin:14px 0 0"><a class="btn" href="https://youtu.be/Nrr_NKPHLzY" target="_blank" rel="noopener">{{watch_yt}}</a></p>
+    </div>
+  </section>
+
+  <section id="bosses" class="blur-bg">
+    <div class="wrap">
+      <h2>{{l_bosses_h}}</h2>
+      <p class="lead">{{l_bosses_lead}}</p>
+      <div class="bosses">
+        <article class="boss kit-panel"><img src="/presskit/shots/screenshot_02_darkness_red_eyes.jpg" alt="{{boss1}}" loading="lazy"><span class="n">{{l_b1n}}</span><h3>{{boss1}}</h3><p>{{l_b1d}}</p></article>
+        <article class="boss kit-panel"><img src="/presskit/shots/screenshot_10_sun_circle.jpg" alt="{{boss2}}" loading="lazy"><span class="n">{{l_b2n}}</span><h3>{{boss2}}</h3><p>{{l_b2d}}</p></article>
+        <article class="boss kit-panel"><img src="/presskit/shots/screenshot_06_sentinel_lightning.jpg" alt="{{boss3}}" loading="lazy"><span class="n">{{l_b3n}}</span><h3>{{boss3}}</h3><p>{{l_b3d}}</p></article>
+        <article class="boss kit-panel"><img src="/presskit/shots/screenshot_17_royal_pyre_spears.jpg" alt="{{boss4}}" loading="lazy"><span class="n">{{l_b4n}}</span><h3>{{boss4}}</h3><p>{{l_b4d}}</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="clips">
+    <div class="wrap">
+      <h2>{{l_motion}}</h2>
+      <div class="clips">
+        <video src="/presskit/clips/v3_1_four_spears_one_cross.mp4" poster="/presskit/clips/v3_1_four_spears_one_cross.jpg" muted loop playsinline autoplay preload="metadata" aria-label="{{clip1}}"></video>
+        <video src="/presskit/clips/v3_2_lights_out.mp4" poster="/presskit/clips/v3_2_lights_out.jpg" muted loop playsinline autoplay preload="metadata" aria-label="{{clip2}}"></video>
+        <video src="/presskit/clips/v3_3_outrun_the_fire.mp4" poster="/presskit/clips/v3_3_outrun_the_fire.jpg" muted loop playsinline autoplay preload="metadata" aria-label="{{clip3}}"></video>
+        <video src="/presskit/clips/v3_4_get_under_the_dome.mp4" poster="/presskit/clips/v3_4_get_under_the_dome.jpg" muted loop playsinline autoplay preload="metadata" aria-label="{{clip4}}"></video>
+      </div>
+    </div>
+  </section>
+
+  <section class="blur-bg">
+    <div class="wrap final">
+      <h2>{{l_final}}</h2>
+      <a class="btn primary" href="https://store.steampowered.com/app/4385110/PigPonyPocalypse/">{{wishlist}}</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Alterhead · alterhead.games@gmail.com</span>
+    <nav>
+      <a href="https://store.steampowered.com/app/4385110/PigPonyPocalypse/">Steam</a>
+      <a href="https://discord.gg/fwwNwaWAKT">Discord</a>
+      <a href="{{base}}/presskit/">{{presskit}}</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+// угольки, как в меню игры
+(function(){
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduce)return;
+  var c=document.getElementById("embers"),x=c.getContext("2d"),ps=[],w,h,dpr=Math.min(2,window.devicePixelRatio||1);
+  function size(){w=c.clientWidth;h=c.clientHeight;c.width=w*dpr;c.height=h*dpr;x.setTransform(dpr,0,0,dpr,0,0);}
+  function spawn(y){return{x:Math.random()*w,y:y==null?h+10:y,r:1+Math.random()*2.2,vy:18+Math.random()*40,vx:-8+Math.random()*16,a:.35+Math.random()*.6,t:Math.random()*6,hue:18+Math.random()*28};}
+  size();for(var i=0;i<70;i++)ps.push(spawn(Math.random()*h));
+  addEventListener("resize",size);
+  var last=performance.now(),run=true;
+  new IntersectionObserver(function(e){run=e[0].isIntersecting;if(run){last=performance.now();requestAnimationFrame(tick);}}).observe(c);
+  function tick(now){
+    if(!run)return;var dt=Math.min(.05,(now-last)/1000);last=now;x.clearRect(0,0,w,h);
+    for(var i=0;i<ps.length;i++){var p=ps[i];p.t+=dt;p.y-=p.vy*dt;p.x+=(p.vx+Math.sin(p.t*1.7)*10)*dt;
+      if(p.y<-10){ps[i]=spawn();continue;}
+      var f=p.a*Math.min(1,p.y/(h*.5));x.globalAlpha=Math.max(0,f);
+      x.fillStyle="hsl("+p.hue+",100%,"+(55+p.r*8)+"%)";x.shadowColor="hsl("+p.hue+",100%,55%)";x.shadowBlur=8;
+      x.fillRect(Math.round(p.x),Math.round(p.y),Math.ceil(p.r*1.6),Math.ceil(p.r*1.6));}
+    x.globalAlpha=1;requestAnimationFrame(tick);}
+  requestAnimationFrame(tick);
+})();
+</script>
+<script src="/assets/site.js"></script>
+</body>
+</html>

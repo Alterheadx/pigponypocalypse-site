@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PigPonyPocalypse — 하드코어 보스 러시</title>
+<meta name="description" content="PigPonyPocalypse: 실수를 절대 용납하지 않는 보스 넷, 두 가지 난이도, 그리고 글로벌 DPS 순위표. 2026년 10월 13일 Steam(Windows, macOS) 출시.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PigPonyPocalypse">
+<meta property="og:description" content="보스 넷, 잡몹은 하나도 없습니다. 모든 죽음은 당신의 실수. 2026년 10월 13일 Steam 출시.">
+<meta property="og:image" content="https://pigponypocalypse.com/presskit/img/capsule.jpg">
+<meta property="og:url" content="https://pigponypocalypse.com/ko/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font-size:17px;line-height:1.6}
+img,video{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:clamp(16px,4vw,48px)}
+
+/* стартовый экран: арт, затемнение слева, логотип и меню колонкой */
+.stage{position:relative;isolation:isolate;overflow:hidden;min-height:min(100vh,860px);display:flex;align-items:center}
+.stage>.art{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:62% 40%}
+.stage::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(90deg,rgba(18,10,24,.92) 0%,rgba(18,10,24,.72) 30%,rgba(18,10,24,.15) 62%,rgba(18,10,24,0) 80%),
+  linear-gradient(180deg,rgba(18,10,24,0) 70%,var(--ground) 100%)}
+.stage-inner{position:relative;z-index:1;width:100%;display:grid;gap:28px;padding-block:56px 72px}
+.logo{width:min(480px,78vw);filter:drop-shadow(0 8px 26px rgba(0,0,0,.7))}
+.tag{margin:0;font:400 clamp(24px,2.6vw,32px)/1.05 var(--display);letter-spacing:.03em;color:var(--lav);max-width:24ch;text-shadow:0 2px 0 rgba(0,0,0,.5)}
+.tag b{font-weight:400;color:var(--gold)}
+.date{display:inline-flex;align-items:baseline;gap:12px;font:500 15px/1 var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.date b{font:700 22px/1 var(--num);letter-spacing:.06em;color:#fff}
+
+/* цифры как у ДПС-метра */
+.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}
+.stat{display:grid;justify-items:center;gap:2px;padding:18px 8px;text-align:center}
+.stat b{font:700 clamp(40px,5vw,60px)/1 var(--num);color:#fff}
+.stat span{font:500 14px/1.2 var(--label);letter-spacing:.12em;text-transform:uppercase;color:var(--lav)}
+
+section{padding-block:clamp(56px,8vw,96px)}
+.blur-bg{position:relative;isolation:isolate}
+.blur-bg::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--ground),rgba(18,10,24,.78) 20%,rgba(18,10,24,.78) 80%,var(--ground)),url(/assets/keyart_blur.jpg) center/cover}
+h2{margin:0 0 8px;font:400 clamp(40px,5.5vw,64px)/1 var(--display);letter-spacing:.02em;text-wrap:balance}
+.lead{margin:0;color:var(--muted);max-width:60ch}
+
+.bosses{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:36px}
+.boss{display:grid;gap:12px;padding:10px}
+.boss img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px}
+.boss h3{margin:0;font:400 28px/1 var(--display);letter-spacing:.03em}
+.boss p{margin:0;font-size:15px;color:var(--muted)}
+.boss .n{font:500 13px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--pink)}
+
+.clips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:32px}
+.trailer{width:100%;aspect-ratio:16/9;margin-top:24px;background:#000;border:8px solid transparent;border-image:url(/assets/ui/list_panel.png) 16 fill / 8px stretch}
+.clips video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:6px;background:#000}
+
+.final{text-align:center;display:grid;justify-items:center;gap:22px}
+.final .btn{font-size:20px;padding:8px 28px}
+footer{border-top:1px solid var(--line);padding-block:26px;color:var(--muted);font:400 15px/1.5 var(--body)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+footer a{color:var(--lav);text-decoration:none;font:500 15px/1.5 var(--label);letter-spacing:.08em;text-transform:uppercase}
+footer a:hover{color:var(--pink)}
+
+@media (max-width:900px){
+  .bosses{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .clips{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .stage::before{background:linear-gradient(180deg,rgba(18,10,24,.35) 0%,rgba(18,10,24,.6) 45%,rgba(18,10,24,.92) 75%,var(--ground) 100%)}
+  .stage{align-items:flex-end}
+}
+@media (max-width:520px){
+  .bosses{grid-template-columns:minmax(0,1fr)}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+</style>
+
+<link rel="alternate" hreflang="en" href="https://pigponypocalypse.com/">
+<link rel="alternate" hreflang="zh-Hans" href="https://pigponypocalypse.com/zh/">
+<link rel="alternate" hreflang="ja" href="https://pigponypocalypse.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://pigponypocalypse.com/ko/">
+<link rel="alternate" hreflang="ru" href="https://pigponypocalypse.com/ru/">
+<link rel="alternate" hreflang="x-default" href="https://pigponypocalypse.com/">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+.langs{position:absolute;top:calc(env(safe-area-inset-top,0px) + 16px);right:clamp(16px,3vw,32px);z-index:5;display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.langs a{font:500 14px/1 var(--label);letter-spacing:.06em;color:var(--lav);text-decoration:none;padding:7px 9px;border-radius:4px;background:rgba(18,10,24,.55)}
+.langs a:hover{color:#fff;background:rgba(230,21,122,.35)}
+.langs a[aria-current]{color:#fff;background:var(--pink)}
+html[lang="ru"] .tag,html[lang="ru"] .tagline{max-width:none}
+html[lang="ru"] .tag b,html[lang="ru"] .tagline em{display:block}
+html{--display:"Bebas Neue","Noto Sans KR",sans-serif;--label:"Oswald","Noto Sans KR",sans-serif;--body:"Roboto","Noto Sans KR",sans-serif}
+h2,h3,.tag,.tagline,.menu a,.final h2{font-weight:900;letter-spacing:.01em;font-synthesis:none;line-height:1.2}
+.menu a{font-size:clamp(28px,3.2vw,38px)}
+.tag,.tagline{max-width:none}
+.tag b,.tagline em{display:block}
+html[lang="ko"] body{word-break:keep-all}
+html[lang="ja"] body{line-break:strict}
+</style>
+</head>
+<body>
+
+<header class="stage">
+  <nav class="langs" aria-label="Language"><a href="/" hreflang="en" lang="en" data-lang="en">EN</a><a href="/zh/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh">中文</a><a href="/ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a><a href="/ko/" hreflang="ko" lang="ko" data-lang="ko" aria-current="page">한국어</a><a href="/ru/" hreflang="ru" lang="ru" data-lang="ru">RU</a></nav>
+  <img class="art" src="/assets/keyart.jpg" alt="용암 절벽 위의 포니 영웅 셋, 그리고 그 앞을 막아선 돼지 왕과 보스들">
+  <canvas class="embers" id="embers" aria-hidden="true"></canvas>
+  <div class="wrap stage-inner">
+    <img class="logo" src="/assets/logo_gold.png" alt="PigPonyPocalypse">
+    <p class="tag">보스 넷, 잡몹은 하나도 없습니다. <b>모든 죽음은 당신의 실수.</b></p>
+    <nav class="menu" aria-label="Main">
+      <a href="https://store.steampowered.com/app/4385110/PigPonyPocalypse/">Steam 찜하기</a>
+      <a href="#trailer">트레일러 보기</a>
+      <a href="#bosses">보스 소개</a>
+      <a href="/ko/presskit/">프레스 키트</a>
+      <a href="https://discord.gg/fwwNwaWAKT">Discord</a>
+    </nav>
+    <div class="date">출시 <b>2026.10.13</b> · Steam · Windows, macOS</div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="stats kit-panel" role="list">
+      <div class="stat" role="listitem"><b>4</b><span>보스</span></div>
+      <div class="stat" role="listitem"><b>2</b><span>난이도</span></div>
+      <div class="stat" role="listitem"><b>9</b><span>특성</span></div>
+      <div class="stat" role="listitem"><b>8</b><span>DPS 순위표</span></div>
+      <div class="stat" role="listitem"><b>0</b><span>노가다</span></div>
+    </div>
+  </div>
+
+  <section id="trailer">
+    <div class="wrap">
+      <h2>트레일러</h2>
+      <video class="trailer" src="/media/pigponypocalypse_trailer_1080p_v2.mp4" poster="/media/trailer_poster.jpg" controls preload="none" playsinline data-manual aria-label="PigPonyPocalypse trailer"></video>
+      <p style="margin:14px 0 0"><a class="btn" href="https://youtu.be/Nrr_NKPHLzY" target="_blank" rel="noopener">YouTube에서 보기</a></p>
+    </div>
+  </section>
+
+  <section id="bosses" class="blur-bg">
+    <div class="wrap">
+      <h2>패턴을 외우고, 죽고, 다시 도전하세요.</h2>
+      <p class="lead">보스마다 고유한 규칙이 있습니다. '진정한 도전'에서는 모든 전투에 새로운 페이즈와 기믹이 추가되고, 최고 DPS는 Steam 글로벌 순위표에 등록됩니다.</p>
+      <div class="bosses">
+        <article class="boss kit-panel"><img src="/presskit/shots/screenshot_02_darkness_red_eyes.jpg" alt="비전에 오염된 아기돼지" loading="lazy"><span class="n">보스 1</span><h3>비전에 오염된 아기돼지</h3><p>오염된 땅, 탑, 그리고 칠흑 같은 어둠 속의 사나운 멧돼지들.</p></article>
+        <article class="boss kit-panel"><img src="/presskit/shots/screenshot_10_sun_circle.jpg" alt="스윈과 스완" loading="lazy"><span class="n">보스 2</span><h3>스윈과 스완</h3><p>불의 벽을 따돌린 뒤 두 형제를 동시에 상대하세요.</p></article>
+        <article class="boss kit-panel"><img src="/presskit/shots/screenshot_06_sentinel_lightning.jpg" alt="멧돼지 파수꾼" loading="lazy"><span class="n">보스 3</span><h3>멧돼지 파수꾼</h3><p>어디에 서느냐에 따라 파수꾼의 싸움 방식이 바뀝니다.</p></article>
+        <article class="boss kit-panel"><img src="/presskit/shots/screenshot_17_royal_pyre_spears.jpg" alt="돼지 왕" loading="lazy"><span class="n">보스 4 · 최종전</span><h3>돼지 왕</h3><p>네 개의 페이즈, 정화된 보스들이 모두 당신 편에서 싸웁니다.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="clips">
+    <div class="wrap">
+      <h2>플레이 영상</h2>
+      <div class="clips">
+        <video src="/presskit/clips/v3_1_four_spears_one_cross.mp4" poster="/presskit/clips/v3_1_four_spears_one_cross.jpg" muted loop playsinline autoplay preload="metadata" aria-label="창 넷, 십자 하나"></video>
+        <video src="/presskit/clips/v3_2_lights_out.mp4" poster="/presskit/clips/v3_2_lights_out.jpg" muted loop playsinline autoplay preload="metadata" aria-label="불이 꺼지면"></video>
+        <video src="/presskit/clips/v3_3_outrun_the_fire.mp4" poster="/presskit/clips/v3_3_outrun_the_fire.jpg" muted loop playsinline autoplay preload="metadata" aria-label="불길을 따돌려라"></video>
+        <video src="/presskit/clips/v3_4_get_under_the_dome.mp4" poster="/presskit/clips/v3_4_get_under_the_dome.jpg" muted loop playsinline autoplay preload="metadata" aria-label="돔 안으로"></video>
+      </div>
+    </div>
+  </section>
+
+  <section class="blur-bg">
+    <div class="wrap final">
+      <h2>10월 13일 Steam 출시</h2>
+      <a class="btn primary" href="https://store.steampowered.com/app/4385110/PigPonyPocalypse/">Steam 찜하기</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Alterhead · alterhead.games@gmail.com</span>
+    <nav>
+      <a href="https://store.steampowered.com/app/4385110/PigPonyPocalypse/">Steam</a>
+      <a href="https://discord.gg/fwwNwaWAKT">Discord</a>
+      <a href="/ko/presskit/">프레스 키트</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+// угольки, как в меню игры
+(function(){
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduce)return;
+  var c=document.getElementById("embers"),x=c.getContext("2d"),ps=[],w,h,dpr=Math.min(2,window.devicePixelRatio||1);
+  function size(){w=c.clientWidth;h=c.clientHeight;c.width=w*dpr;c.height=h*dpr;x.setTransform(dpr,0,0,dpr,0,0);}
+  function spawn(y){return{x:Math.random()*w,y:y==null?h+10:y,r:1+Math.random()*2.2,vy:18+Math.random()*40,vx:-8+Math.random()*16,a:.35+Math.random()*.6,t:Math.random()*6,hue:18+Math.random()*28};}
+  size();for(var i=0;i<70;i++)ps.push(spawn(Math.random()*h));
+  addEventListener("resize",size);
+  var last=performance.now(),run=true;
+  new IntersectionObserver(function(e){run=e[0].isIntersecting;if(run){last=performance.now();requestAnimationFrame(tick);}}).observe(c);
+  function tick(now){
+    if(!run)return;var dt=Math.min(.05,(now-last)/1000);last=now;x.clearRect(0,0,w,h);
+    for(var i=0;i<ps.length;i++){var p=ps[i];p.t+=dt;p.y-=p.vy*dt;p.x+=(p.vx+Math.sin(p.t*1.7)*10)*dt;
+      if(p.y<-10){ps[i]=spawn();continue;}
+      var f=p.a*Math.min(1,p.y/(h*.5));x.globalAlpha=Math.max(0,f);
+      x.fillStyle="hsl("+p.hue+",100%,"+(55+p.r*8)+"%)";x.shadowColor="hsl("+p.hue+",100%,55%)";x.shadowBlur=8;
+      x.fillRect(Math.round(p.x),Math.round(p.y),Math.ceil(p.r*1.6),Math.ceil(p.r*1.6));}
+    x.globalAlpha=1;requestAnimationFrame(tick);}
+  requestAnimationFrame(tick);
+})();
+</script>
+<script src="/assets/site.js"></script>
+<script>
+document.querySelectorAll(".langs a").forEach(function(a){a.addEventListener("click",function(){try{localStorage.setItem("ppp_lang",a.dataset.lang)}catch(e){}})});
+</script>
+</body>
+</html>

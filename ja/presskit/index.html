@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="2026年10月13日にSteamで発売される高難易度ボスラッシュ『PigPonyPocalypse』のプレスキット。概要、ボス、スクリーンショット、映像、ロゴ、プレス窓口。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PigPonyPocalypse — プレスキット">
+<meta property="og:description" content="ボスは4体、雑魚戦は一切なし。死んだら自分のせい。2026年10月13日 Steamで発売。">
+<meta property="og:image" content="https://pigponypocalypse.com/presskit/img/capsule.jpg">
+<meta property="og:url" content="https://pigponypocalypse.com/ja/presskit/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png">
+<title>PigPonyPocalypse — プレスキット</title>
+<style>
+/* layout: volcanic banner → fact sheet beside the pitch → bosses in play order → media → contact. one dark world, gold + lava on plum */
+:root{
+  --ground:#140c1a;      /* plum-black, the arena's shadow */
+  --panel:#1e1326;
+  --line:#3a2846;
+  --ink:#f3eaff;         /* lavender-white, the game's UI ink */
+  --muted:#b7a6c9;
+  --gold:#ffc76a;        /* logo gold */
+  --lava:#ff6a2b;        /* the King's cracks */
+  --pink:#e6157a;        /* menu hover pink */
+  --display:"Bebas Neue",Impact,"Arial Narrow",sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --label:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--ground);color:var(--ink);font:400 17px/1.6 var(--body);margin:0}
+a{color:var(--gold);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+img,video{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+h2{font:400 clamp(40px,6vw,64px)/.95 var(--display);letter-spacing:.01em;margin:0;text-wrap:balance}
+h3{font:400 clamp(30px,4vw,40px)/1 var(--display);letter-spacing:.015em;margin:0;text-wrap:balance}
+.eyebrow{font:600 14px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--lava);margin:0 0 12px}
+section{padding-block:clamp(56px,9vw,104px)}
+section+section{border-top:1px solid var(--line)}
+p{margin:0}
+
+/* hero */
+.hero{position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-art{position:absolute;inset:0;z-index:-2}
+.hero-art img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(180deg,rgba(20,12,26,.15) 0%,rgba(20,12,26,.05) 35%,rgba(20,12,26,.82) 78%,var(--ground) 100%)}
+.hero-inner{min-height:clamp(520px,62vw,720px);display:flex;flex-direction:column;justify-content:flex-end;gap:22px;padding-block:40px 44px}
+.logo{width:min(520px,82%);filter:drop-shadow(0 6px 24px rgba(0,0,0,.6))}
+.tagline{font:400 clamp(28px,4.4vw,48px)/1 var(--display);letter-spacing:.02em;max-width:22ch;text-wrap:balance}
+.tagline em{font-style:normal;color:var(--gold)}
+.release{display:flex;flex-wrap:wrap;gap:8px 18px;font:600 16px/1.2 var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.release b{color:var(--ink);font-weight:700}
+.release span{display:flex;align-items:center;gap:18px}
+.release span+span::before{content:"";width:5px;height:5px;background:var(--lava);transform:rotate(45deg)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 16px/1 var(--label);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+  padding:14px 20px;border-radius:6px;border:1px solid var(--line);color:var(--ink);background:rgba(30,19,38,.75);cursor:pointer}
+.btn:hover{border-color:var(--pink);color:#fff}
+.btn.primary{background:var(--gold);color:#2a1606;border-color:var(--gold)}
+.btn.primary:hover{background:#ffd78f;color:#2a1606}
+
+/* facts + pitch */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);gap:clamp(32px,6vw,80px);align-items:start}
+.facts{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:26px 24px}
+.facts h2{font-size:34px;margin-bottom:14px}
+.facts dl{margin:0;display:grid;gap:0}
+.facts .row{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;padding:11px 0;border-top:1px solid var(--line)}
+.facts dt{font:600 13px/1.5 var(--label);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:0;font-size:15.5px;line-height:1.5;overflow-wrap:anywhere}
+.pitch{display:grid;gap:22px;max-width:64ch}
+.pitch .lede{font-size:clamp(20px,2.2vw,23px);line-height:1.5;color:var(--ink)}
+.pitch p{color:var(--muted)}
+.pitch p strong{color:var(--ink);font-weight:600}
+
+/* features */
+.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 44px;margin-top:44px}
+.feature{display:grid;gap:10px;align-content:start;padding-top:18px;border-top:2px solid var(--line)}
+.feature:hover{border-top-color:var(--lava)}
+.feature h3{font-size:30px;color:var(--gold)}
+.feature p{color:var(--muted);font-size:16px}
+
+/* bosses */
+.bosses{display:grid;gap:clamp(56px,8vw,96px);margin-top:48px}
+.boss{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(24px,4vw,52px);align-items:center}
+.boss:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
+.boss:nth-child(even) .boss-media{order:2}
+.boss-media{display:grid;gap:10px}
+.boss-media .main{border-radius:8px;border:1px solid var(--line);cursor:zoom-in;aspect-ratio:16/9;object-fit:cover;width:100%}
+.boss-media .thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.boss-media .thumbs img{border-radius:6px;border:1px solid var(--line);cursor:zoom-in;aspect-ratio:16/9;object-fit:cover;width:100%;opacity:.85}
+.boss-media .thumbs img:hover{opacity:1;border-color:var(--gold)}
+.boss-text{display:grid;gap:16px}
+.order{font:700 14px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--lava)}
+.boss-text h3{font-size:clamp(40px,5vw,58px)}
+.boss-text p{color:var(--muted)}
+.mechs{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.mechs li{display:grid;grid-template-columns:14px minmax(0,1fr);gap:10px;font-size:15.5px;color:var(--ink)}
+.mechs li::before{content:"";width:7px;height:7px;margin-top:9px;background:var(--gold);transform:rotate(45deg)}
+.mechs b{font-weight:600;color:var(--gold)}
+.enrage{font:600 14px/1.3 var(--label);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.enrage b{color:var(--pink)}
+
+/* media */
+.trailer{margin-top:36px;border:1px dashed var(--line);border-radius:10px;padding:clamp(22px,4vw,36px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;background:var(--panel)}
+.trailer h3{font-size:32px}
+.trailer p{color:var(--muted);margin-top:6px}
+.clips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:28px}
+.clip{display:grid;gap:10px}
+.clip video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:8px;border:1px solid var(--line);background:#000}
+.clip span{font:600 14px/1.3 var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+.gallery button{all:unset;cursor:zoom-in;border-radius:6px;overflow:hidden;border:1px solid var(--line);display:block}
+.gallery button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.gallery img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .25s}
+.gallery button:hover img{transform:scale(1.03)}
+@media (prefers-reduced-motion:reduce){.gallery img{transition:none}}
+.note{font-size:15px;color:var(--muted);max-width:70ch}
+.dl{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:22px}
+.sub{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px 24px;margin-top:64px}
+.sub:first-of-type{margin-top:0}
+.sub h3{font-size:36px}
+
+.art{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;margin-top:28px}
+.art figure{margin:0;display:grid;gap:8px}
+.art figure>div{border-radius:8px;border:1px solid var(--line);overflow:hidden;background:var(--panel)}
+.art .logo-box{display:grid;place-items:center;padding:28px;height:100%;background:radial-gradient(circle at 50% 40%,#3b1d2e,#160d1c 70%)}
+.art figcaption{font:600 14px/1.3 var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(32px,6vw,80px);align-items:start}
+.contact .pitch p{color:var(--muted)}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.mail code{font:600 20px/1.2 var(--label);letter-spacing:.04em;color:var(--ink);user-select:all;overflow-wrap:anywhere;min-width:0}
+.links{display:grid;gap:12px;margin-top:14px}
+.links a{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);font:600 18px/1.2 var(--label);letter-spacing:.06em;text-transform:uppercase}
+.links a:hover{color:var(--gold)}
+.links a span{color:var(--muted);font-weight:500;text-transform:none;letter-spacing:.02em;overflow-wrap:anywhere;text-align:right}
+footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:14px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,6,14,.94);display:grid;grid-template-rows:1fr auto;padding:clamp(12px,3vw,32px);gap:12px}
+.lb img{max-height:100%;max-width:100%;margin:auto;object-fit:contain;border-radius:6px;min-height:0}
+.lb-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;color:var(--muted);font:600 15px/1.3 var(--label);letter-spacing:.06em}
+.lb-bar .ctrls{display:flex;gap:8px}
+
+@media (max-width:900px){
+  .split,.contact,.art{grid-template-columns:minmax(0,1fr)}
+  .features{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .boss,.boss:nth-child(even){grid-template-columns:minmax(0,1fr)}
+  .boss:nth-child(even) .boss-media{order:0}
+  .clips{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .features,.gallery{grid-template-columns:minmax(0,1fr)}
+  .trailer{grid-template-columns:minmax(0,1fr)}
+  .facts .row{grid-template-columns:minmax(0,1fr);gap:2px}
+}
+</style>
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+.trailer-box{margin-top:32px}
+.trailer-box video{width:100%;aspect-ratio:16/9;background:#000;border:8px solid transparent;border-image:url(/assets/ui/list_panel.png) 16 fill / 8px stretch}
+.facts,.mail{border:8px solid transparent;border-radius:0;border-image:url(/assets/ui/list_panel.png) 16 fill / 8px stretch;background:none}
+.facts .row{border-top-color:var(--line)}
+.logo{content:url(/assets/logo_gold.png)}
+.release b,.enrage b{font-family:var(--num);font-weight:700;letter-spacing:.04em}
+.order,.eyebrow{color:var(--pink)}
+.mechs li::before{background:var(--pink)}
+.feature:hover{border-top-color:var(--pink)}
+</style>
+
+<link rel="alternate" hreflang="en" href="https://pigponypocalypse.com/presskit/">
+<link rel="alternate" hreflang="zh-Hans" href="https://pigponypocalypse.com/zh/presskit/">
+<link rel="alternate" hreflang="ja" href="https://pigponypocalypse.com/ja/presskit/">
+<link rel="alternate" hreflang="ko" href="https://pigponypocalypse.com/ko/presskit/">
+<link rel="alternate" hreflang="ru" href="https://pigponypocalypse.com/ru/presskit/">
+<link rel="alternate" hreflang="x-default" href="https://pigponypocalypse.com/presskit/">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap">
+<style>
+.langs{position:absolute;top:calc(env(safe-area-inset-top,0px) + 16px);right:clamp(16px,3vw,32px);z-index:5;display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.langs a{font:500 14px/1 var(--label);letter-spacing:.06em;color:var(--lav);text-decoration:none;padding:7px 9px;border-radius:4px;background:rgba(18,10,24,.55)}
+.langs a:hover{color:#fff;background:rgba(230,21,122,.35)}
+.langs a[aria-current]{color:#fff;background:var(--pink)}
+html[lang="ru"] .tag,html[lang="ru"] .tagline{max-width:none}
+html[lang="ru"] .tag b,html[lang="ru"] .tagline em{display:block}
+html{--display:"Bebas Neue","Noto Sans JP",sans-serif;--label:"Oswald","Noto Sans JP",sans-serif;--body:"Roboto","Noto Sans JP",sans-serif}
+h2,h3,.tag,.tagline,.menu a,.final h2{font-weight:900;letter-spacing:.01em;font-synthesis:none;line-height:1.2}
+.menu a{font-size:clamp(28px,3.2vw,38px)}
+.tag,.tagline{max-width:none}
+.tag b,.tagline em{display:block}
+html[lang="ko"] body{word-break:keep-all}
+html[lang="ja"] body{line-break:strict}
+</style>
+</head>
+<body>
+<header class="hero">
+  <nav class="langs" aria-label="Language"><a href="/presskit/" hreflang="en" lang="en" data-lang="en">EN</a><a href="/zh/presskit/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh">中文</a><a href="/ja/presskit/" hreflang="ja" lang="ja" data-lang="ja" aria-current="page">日本語</a><a href="/ko/presskit/" hreflang="ko" lang="ko" data-lang="ko">한국어</a><a href="/ru/presskit/" hreflang="ru" lang="ru" data-lang="ru">RU</a></nav>
+  <div class="hero-art"><img src="/assets/keyart.jpg" alt="キーアート：溶岩の崖に立つ3人のポニーの英雄と、豚の王、秘術に蝕まれた子豚、猪の番人、双子の猪スインとスワン"></div>
+  <div class="wrap hero-inner">
+    <img class="logo" src="/presskit/img/logo.png" alt="PigPonyPocalypse">
+    <p class="tagline">ボスは4体、雑魚戦は一切なし。 <em>死んだら自分のせい。</em></p>
+    <div class="release"><span><b>2026年10月13日発売</b></span><span>Steam</span><span>Windows &amp; macOS</span></div>
+    <div class="cta">
+      <a class="btn primary" href="https://store.steampowered.com/app/4385110/PigPonyPocalypse/" target="_blank" rel="noopener">Steamストアページ</a>
+      <a class="btn" href="#media">スクリーンショットと映像</a>
+      <a class="btn" href="/presskit/PigPonyPocalypse_PressKit.zip" download>ZIPをダウンロード</a>
+      <a class="btn" href="#contact">プレス窓口</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="about">
+  <div class="wrap split">
+    <aside class="facts" aria-labelledby="facts-h">
+      <h2 id="facts-h">ゲーム概要</h2>
+      <dl>
+        <div class="row"><dt>タイトル</dt><dd>PigPonyPocalypse</dd></div>
+        <div class="row"><dt>開発</dt><dd>Alterhead（個人開発・セルフパブリッシング）</dd></div>
+        <div class="row"><dt>発売日</dt><dd>2026年10月13日</dd></div>
+        <div class="row"><dt>プラットフォーム</dt><dd>Windows、macOS（Steam）</dd></div>
+        <div class="row"><dt>ジャンル</dt><dd>ボスラッシュ、弾幕、ツインスティックシューター</dd></div>
+        <div class="row"><dt>内容</dt><dd>ボス4体 × 難易度2種、タレント9種、Steam実績18個、DPS世界ランキング8種</dd></div>
+        <div class="row"><dt>対応言語</dt><dd>日本語、英語、簡体字中国語、韓国語、ロシア語</dd></div>
+        <div class="row"><dt>操作</dt><dd>キーボード＆マウス。Xbox／PlayStationコントローラー対応</dd></div>
+        <div class="row"><dt>音楽</dt><dd>オリジナルのメタル・サウンドトラック</dd></div>
+        <div class="row"><dt>プレス</dt><dd>alterhead.games@gmail.com</dd></div>
+      </dl>
+    </aside>
+    <div class="pitch">
+      <p class="eyebrow">ゲームについて</p>
+      <h2>一つのミスも許さないボスラッシュ</h2>
+      <p class="lede">PigPonyPocalypseにあるのは、作り込まれた4つのボス戦だけ。レベル上げも稼ぎも雑魚敵もなし。あるのは自分の腕と、ボスのパターンと、DPSの世界ランキングだけだ。</p>
+      <p>ボスにはそれぞれのルールがある。遮蔽物の陰でしか生き残れない攻撃、必ず中断すべき詠唱、欲張って攻撃するほど溜まっていく呪い。床は覚えておくべき順番で爆発する。</p>
+      <p><strong>やさしい</strong>は戦いを覚えるための難易度。<strong>真の試練</strong>こそが本当のゲームだ。新たなフェーズ、新たな致命的ギミック、そしてボスごとにまったく違うリズム。</p>
+      <p>倒して終わりじゃない。各ボス・各難易度での最高DPSはSteamの世界ランキングに登録される。だから戦いは撃破後も続く。9つのタレントから選び、より良い開幕を探し、誰よりも火力を絞り出せ。</p>
+      <p>ひとりで戦うわけじゃない。だが仲間がいても楽にはならない。タンクのフェイスウォールは顔を殴られるのが夢で、ボスの攻撃にいちいち点数をつける。ヒーラーのショーティは彼の回復をきっぱり拒否。ふたりに指示を出し、すべてが一度に崩れたら時間を止めろ。</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="features">
+      <div class="feature"><h3>死んだら自分のせい</h3><p>すべてのギミックには解法がある。理不尽な即死も、稼げば越えられるステータスの壁もない。</p></div>
+      <div class="feature"><h3>真の試練</h3><p>高難易度はまったく別の戦い。どのボスにも追加フェーズ、新ギミック、よりシビアなタイミングが待っている。</p></div>
+      <div class="feature"><h3>世界一のDPSを目指せ</h3><p>SteamのDPSランキングは8つ。ボスと難易度ごとにひとつずつ。</p></div>
+      <div class="feature"><h3>9つのタレント</h3><p>3段階のタレントでプレイスタイルが変わる。</p></div>
+      <div class="feature"><h3>クセの強い仲間たち</h3><p>マゾヒストのタンクと、彼を回復したがらないヒーラーに指示を出せ。時間を止めて、次の一手を考えろ。</p></div>
+      <div class="feature"><h3>メタル・サウンドトラック</h3><p>すべての戦いのために書き下ろしたオリジナルのメタル。各ボス戦の前にはコミック風のカットシーンも。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="bosses">
+  <div class="wrap">
+    <p class="eyebrow">ボス（登場順）</p>
+    <h2>それぞれのルールを持つ4つの戦い</h2>
+    <div class="bosses">
+
+      <article class="boss">
+        <div class="boss-media">
+          <img class="main" data-full src="/presskit/shots/screenshot_02_darkness_red_eyes.jpg" alt="秘術に蝕まれた子豚がプレイヤーに秘術オーブの螺旋を放つ" loading="lazy">
+          <div class="thumbs">
+            <img data-full src="/presskit/shots/screenshot_13_eight_boars_in_the_dark.jpg" alt="アリーナが闇に包まれ、追跡する猪がプレイヤーを狙う" loading="lazy">
+            <img data-full src="/presskit/shots/screenshot_20_dps_breakdown.jpg" alt="勝利画面。スキルごとのDPS内訳" loading="lazy">
+          </div>
+        </div>
+        <div class="boss-text">
+          <span class="order">ボス 1／4</span>
+          <h3>秘術に蝕まれた子豚</h3>
+          <p>見た目は無害。足元の大地を蝕み、塔と猪を呼び出す。「真の試練」では秘術の殲滅を軸にした第3フェーズが加わる。</p>
+          <ul class="mechs">
+            <li><span><b>闇</b>——明かりが消え、追跡する猪が迫ってくる。</span></li>
+            <li><span><b>爆発</b>——誰かが円の中に立たなければ、すべてが吹き飛ぶ。</span></li>
+            <li><span><b>秘術の殲滅</b>——アリーナ全体が燃え上がる。身を隠せるのは塔の陰だけ。</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="boss">
+        <div class="boss-media">
+          <img class="main" data-full src="/presskit/shots/screenshot_10_sun_circle.jpg" alt="神殿のアリーナで共に戦うスインとスワン" loading="lazy">
+          <div class="thumbs">
+            <img data-full src="/presskit/shots/screenshot_18_mystery_spirit.jpg" alt="炎の壁に追われながらクリスタルの橋を走る" loading="lazy">
+          </div>
+        </div>
+        <div class="boss-text">
+          <span class="order">ボス 2／4</span>
+          <h3>スインとスワン</h3>
+          <p>猪の兄弟。片方は凶暴、もう片方はちょっと間抜け。崩れゆく橋の上で炎の壁から逃げ切り、アリーナで兄弟と対峙せよ。</p>
+          <ul class="mechs">
+            <li><span><b>炎の壁</b>——橋は崩れ、炎は止まらない。</span></li>
+            <li><span><b>空飛ぶ猪</b>——炎から逃げるあいだも、追尾オーブを撃ってくる。</span></li>
+            <li><span><b>オーブの迷路</b>——スインがアリーナを致命的な火球の迷路で埋め尽くす。</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="boss">
+        <div class="boss-media">
+          <img class="main" data-full src="/presskit/shots/screenshot_06_sentinel_lightning.jpg" alt="猪の番人が神殿の床にレーザーを放つ" loading="lazy">
+          <div class="thumbs">
+            <img data-full src="/presskit/shots/screenshot_14_lightning_storm.jpg" alt="番人のアリーナを落雷の嵐が覆う" loading="lazy">
+          </div>
+        </div>
+        <div class="boss-text">
+          <span class="order">ボス 3／4</span>
+          <h3>猪の番人</h3>
+          <p>アリーナは3つに分かれ、番人はそれぞれの場所で違う戦い方をする。</p>
+          <ul class="mechs">
+            <li><span><b>左側</b>——スキルの溜まりが速くなるが、毎秒ダメージを受ける。</span></li>
+            <li><span><b>右側</b>——与えるダメージが上がり続けるが、こちらも毎秒ダメージを受ける。</span></li>
+            <li><span><b>中央</b>——番人が姿を消し、記憶パズルを出してくる。</span></li>
+          </ul>
+          <p class="enrage">エンレイジ：<b>4分</b></p>
+        </div>
+      </article>
+
+      <article class="boss">
+        <div class="boss-media">
+          <img class="main" data-full src="/presskit/shots/screenshot_17_royal_pyre_spears.jpg" alt="豚の王が王の篝火を詠唱し、炎が広間を満たす" loading="lazy">
+          <div class="thumbs">
+            <img data-full src="/presskit/shots/screenshot_03_fire_cross.jpg" alt="炎の十字のラインが王の広間を切り裂く" loading="lazy">
+            <img data-full src="/presskit/shots/screenshot_15_fire_walls.jpg" alt="炎の壁がアリーナを床ごとに区切る" loading="lazy">
+            <img data-full src="/presskit/shots/screenshot_16_general_sword_star.jpg" alt="猪の将軍の斬撃ラインが広間に放射状に走る" loading="lazy">
+          </div>
+        </div>
+        <div class="boss-text">
+          <span class="order">ボス 4／4 · 最終戦</span>
+          <h3>豚の王</h3>
+          <p>体力の4分の1ごとに切り替わる4つのフェーズ。倒して浄化したボスたちが味方として駆けつける。</p>
+          <ul class="mechs">
+            <li><span><b>炎の十字</b>——先へ進めるように槍を立てろ。</span></li>
+            <li><span><b>猪の将軍</b>——王の忠実な家臣。独自の攻撃と自爆する子豚を操る。</span></li>
+            <li><span><b>炎の記憶</b>——足元の床が、覚えておくべき順番で爆発する。</span></li>
+            <li><span><b>王の篝火</b>——王が無敵になり、足場全体をじわじわと焼き尽くす。どう対処するか、思いつけるか？</span></li>
+          </ul>
+          <p class="enrage">エンレイジ：<b>7分30秒</b></p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="media">
+  <div class="wrap">
+    <p class="eyebrow">メディア</p>
+    <h2>トレーラー、映像、スクリーンショット</h2>
+
+    <div class="trailer-box">
+      <video src="/media/pigponypocalypse_trailer_1080p_v2.mp4" poster="/media/trailer_poster.jpg" controls preload="none" playsinline data-manual aria-label="PigPonyPocalypse trailer"></video>
+      <div class="dl"><a class="btn primary" href="https://youtu.be/Nrr_NKPHLzY" target="_blank" rel="noopener">YouTubeで見る</a><a class="btn" href="/media/pigponypocalypse_trailer_1080p_v2.mp4" download>トレーラーをダウンロード（MP4、1080p、41 MB）</a><p class="note">1:23 · 埋め込みはYouTubeから： https://youtu.be/Nrr_NKPHLzY</p></div>
+    </div>
+
+    <div class="sub"><h3>ショート映像</h3></div>
+    <div class="clips">
+      <div class="clip"><video src="/presskit/clips/v3_1_four_spears_one_cross.mp4" poster="/presskit/clips/v3_1_four_spears_one_cross.jpg" muted loop playsinline autoplay preload="metadata" aria-label="4本の槍、ひとつの十字：豚の王の炎の十字"></video><span>Four spears, one cross</span></div>
+      <div class="clip"><video src="/presskit/clips/v3_2_lights_out.mp4" poster="/presskit/clips/v3_2_lights_out.jpg" muted loop playsinline autoplay preload="metadata" aria-label="明かりが消えると、猪がやってくる"></video><span>Lights out</span></div>
+      <div class="clip"><video src="/presskit/clips/v3_3_outrun_the_fire.mp4" poster="/presskit/clips/v3_3_outrun_the_fire.jpg" muted loop playsinline autoplay preload="metadata" aria-label="兄弟の橋で炎の壁から逃げ切れ"></video><span>Outrun the fire</span></div>
+      <div class="clip"><video src="/presskit/clips/v3_4_get_under_the_dome.mp4" poster="/presskit/clips/v3_4_get_under_the_dome.jpg" muted loop playsinline autoplay preload="metadata" aria-label="王の憤怒の前にドームの中へ"></video><span>Get under the dome</span></div>
+    </div>
+
+    <div class="sub"><h3>スクリーンショット</h3><span class="enrage">11枚 · クリックで拡大</span></div>
+    <div class="gallery" id="gallery"></div>
+    <div class="dl"><a class="btn primary" href="/presskit/PigPonyPocalypse_PressKit.zip" download>プレスキットをダウンロード（ZIP、13 MB）</a><p class="note">4Kスクリーンショット11枚、透過ロゴ、キーアート。スクリーンショットはすべて実際のゲーム画面です。</p></div>
+
+    <div class="sub"><h3>ロゴとキーアート</h3></div>
+    <div class="art">
+      <figure><div><img data-full src="/presskit/img/capsule.jpg" alt="PigPonyPocalypseのロゴ入りキーアート" loading="lazy" style="cursor:zoom-in"></div><figcaption>ロゴ入りキーアート</figcaption></figure>
+      <figure><div class="logo-box"><img data-full src="/presskit/img/logo.png" alt="PigPonyPocalypseのロゴ" loading="lazy" style="cursor:zoom-in;max-width:88%"></div><figcaption>ロゴ（透過PNG）</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <div class="pitch">
+      <p class="eyebrow">開発者</p>
+      <h2>開発：Alterhead</h2>
+      <p>PigPonyPocalypseは、ひとりの人間が企画から制作までを手がけたボスラッシュだ。本物で公平な挑戦を求めるプレイヤーのためのゲームで、前に進む方法は上達だけ。DPSランキングでは、操作の精度と戦術の工夫を他のプレイヤーと競い合える。</p>
+      <p>キーが必要な方は、このページのプレス用アドレスまでご連絡ください。</p>
+    </div>
+    <div>
+      <p class="eyebrow">プレス窓口</p>
+      <div class="mail">
+        <code id="mail">alterhead.games@gmail.com</code>
+        <button class="btn" id="copy" type="button">コピー</button>
+      </div>
+      <div class="links">
+        <a href="https://store.steampowered.com/app/4385110/PigPonyPocalypse/" target="_blank" rel="noopener">Steam <span>store.steampowered.com/app/4385110</span></a>
+        <a href="https://discord.gg/fwwNwaWAKT" target="_blank" rel="noopener">Discord <span>discord.gg/fwwNwaWAKT</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><a href="/ja/">pigponypocalypse.com</a> · PigPonyPocalypse © 2026 Alterhead. スクリーンショットとアートは、本作の紹介記事・動画にご自由にお使いいただけます。</div></footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="画像ビューア">
+  <img id="lb-img" alt="">
+  <div class="lb-bar">
+    <span id="lb-cap"></span>
+    <div class="ctrls">
+      <button class="btn" id="lb-prev" type="button" aria-label="前の画像">←</button>
+      <button class="btn" id="lb-next" type="button" aria-label="次の画像">→</button>
+      <button class="btn" id="lb-close" type="button">閉じる</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var shots=[
+    ["screenshot_02_darkness_red_eyes","秘術に蝕まれた子豚——秘術の螺旋"],
+    ["screenshot_13_eight_boars_in_the_dark","秘術に蝕まれた子豚——闇と追跡する猪"],
+    ["screenshot_10_sun_circle","スインとスワン——兄弟のアリーナ"],
+    ["screenshot_18_mystery_spirit","スインとスワン——橋と炎の壁"],
+    ["screenshot_06_sentinel_lightning","猪の番人——レーザー"],
+    ["screenshot_14_lightning_storm","猪の番人——落雷"],
+    ["screenshot_03_fire_cross","豚の王——炎の十字"],
+    ["screenshot_15_fire_walls","豚の王——炎の壁"],
+    ["screenshot_16_general_sword_star","豚の王——猪の将軍"],
+    ["screenshot_17_royal_pyre_spears","豚の王——王の篝火"],
+    ["screenshot_20_dps_breakdown","勝利画面——DPS内訳"]
+  ];
+  var g=document.getElementById("gallery");
+  shots.forEach(function(s){
+    var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","拡大："+s[1]);
+    var i=document.createElement("img");i.src="/presskit/shots/"+s[0]+".jpg";i.alt=s[1];i.loading="lazy";i.setAttribute("data-full","");
+    b.appendChild(i);g.appendChild(b);
+  });
+
+  var lb=document.getElementById("lb"),li=document.getElementById("lb-img"),cap=document.getElementById("lb-cap"),list=[],idx=0,last=null;
+  function show(n){idx=(n+list.length)%list.length;li.src=list[idx].src;li.alt=list[idx].alt;cap.textContent=list[idx].alt;}
+  function open(img){list=[].slice.call(document.querySelectorAll("img[data-full]"));last=document.activeElement;show(list.indexOf(img));lb.hidden=false;document.getElementById("lb-close").focus();}
+  function close(){lb.hidden=true;li.removeAttribute("src");if(last&&last.focus)last.focus();}
+  document.addEventListener("click",function(e){
+    var t=e.target;
+    if(t.closest&&t.closest(".gallery button")){open(t.closest("button").querySelector("img"));return;}
+    if(t.matches&&t.matches("img[data-full]")&&!lb.contains(t)){open(t);}
+  });
+  document.getElementById("lb-close").onclick=close;
+  document.getElementById("lb-prev").onclick=function(){show(idx-1)};
+  document.getElementById("lb-next").onclick=function(){show(idx+1)};
+  lb.addEventListener("click",function(e){if(e.target===lb)close();});
+  document.addEventListener("keydown",function(e){
+    if(lb.hidden)return;
+    if(e.key==="Escape")close();else if(e.key==="ArrowLeft")show(idx-1);else if(e.key==="ArrowRight")show(idx+1);
+  });
+
+
+  var cp=document.getElementById("copy");
+  cp.onclick=function(){
+    var txt=document.getElementById("mail").textContent;
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("mail"));var s=getSelection();s.removeAllRanges();s.addRange(r);cp.textContent="選択しました";}
+    try{navigator.clipboard.writeText(txt).then(function(){cp.textContent="コピーしました";},sel);}catch(err){sel();}
+  };
+})();
+</script>
+
+<script src="/assets/site.js"></script>
+<script>
+document.querySelectorAll(".langs a").forEach(function(a){a.addEventListener("click",function(){try{localStorage.setItem("ppp_lang",a.dataset.lang)}catch(e){}})});
+</script>
+</body>
+</html>
